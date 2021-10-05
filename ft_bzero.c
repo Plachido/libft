@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plpelleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:10:23 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/01/12 13:51:29 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:08:56 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char*)(s + i) = '\0';
+		*(unsigned char *)(s + i) = '\0';
 		i++;
 	}
 	return ;

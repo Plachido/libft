@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plpelleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 14:06:32 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/01/18 17:19:29 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:10:07 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			**ft_malloc_error(char **tab)
+static char	**ft_malloc_error(char **tab)
 {
 	unsigned int	i;
 
@@ -53,10 +53,10 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	return (nb_strs);
 }
 
-static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
+static void	ft_get_next_str(char **next_str, unsigned int *next_str_len,
 					char c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	*next_str += *next_str_len;
 	*next_str_len = 0;
@@ -72,7 +72,7 @@ static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
 	}
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char			**tab;
 	char			*next_str;
@@ -83,7 +83,8 @@ char				**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb_strs = ft_get_nb_strs(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (nb_strs + 1))))
+	tab = (char **)malloc(sizeof(char *) * (nb_strs + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	next_str = (char *)s;
@@ -91,10 +92,10 @@ char				**ft_split(char const *s, char c)
 	while (i < nb_strs)
 	{
 		ft_get_next_str(&next_str, &next_str_len, c);
-		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
+		if (!tab[i])
 			return (ft_malloc_error(tab));
-		ft_strlcpy(tab[i], next_str, next_str_len + 1);
-		i++;
+		ft_strlcpy(tab[i++], next_str, next_str_len + 1);
 	}
 	tab[i] = NULL;
 	return (tab);

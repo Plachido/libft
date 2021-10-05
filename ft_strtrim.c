@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plpelleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 10:57:17 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/01/18 18:54:30 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:07:41 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	in(char const s1, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -26,7 +26,7 @@ static int	in(char const s1, char const *set)
 	return (1);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	int		start;

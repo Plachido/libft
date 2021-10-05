@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plpelleg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 17:37:11 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/01/14 18:56:41 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:07:33 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 		{
-			p = &((char*)s)[i];
+			p = &((char *)s)[i];
 			return (p);
 		}
 		i--;
 	}
 	if ((char)c == '\0')
 	{
-		p = &((char*)s)[ft_strlen(s)];
+		p = &((char *)s)[ft_strlen(s)];
 		return (p);
 	}
 	return (NULL);

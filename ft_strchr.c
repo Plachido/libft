@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 17:37:11 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/13 19:40:53 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:05:11 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 		{
-			p = &((char*)s)[i];
+			p = &((char *)s)[i];
 			return (p);
 		}
 		i++;
 	}
 	if ((char)c == '\0')
 	{
-		p = &((char*)s)[i];
+		p = &((char *)s)[i];
 		return (p);
 	}
 	return (NULL);
