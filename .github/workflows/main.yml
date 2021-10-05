@@ -1,10 +1,8 @@
 on: [push, pull_request]
 
 jobs:
-  norminette_job:
+  norminette_v3_job:
     runs-on: ubuntu-latest
     name: norminette
     steps:
     - uses: alexandregv/norminette-action@v3
-      with:
-        flags: '.'
